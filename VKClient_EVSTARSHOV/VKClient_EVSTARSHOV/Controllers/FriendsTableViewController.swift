@@ -10,7 +10,7 @@ import UIKit
 class FriendsTableViewController: UITableViewController {
     
     private let friendsArray = [
-        Friends(image: UIImage(named: "Алена"), name: "Алена Харитонова", groups: "Cлавяне"),
+        Friends(image: UIImage(named: "Алена"), name: "Алена Харитонова", groups: "Cлавянки"),
         Friends(image: UIImage(named: "Елена"), name: "Елена Филатова", groups: "Спортсменки"),
         Friends(image: UIImage(named: "Мария"), name: "Мария Кичук", groups: "Отличницы")
         ]
