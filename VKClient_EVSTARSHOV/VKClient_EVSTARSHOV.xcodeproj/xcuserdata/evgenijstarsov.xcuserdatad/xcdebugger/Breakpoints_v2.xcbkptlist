@@ -3,4 +3,129 @@
    uuid = "239D218A-5145-4C64-BE95-02BD535B1D55"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9206CBFC-72B2-451C-BB98-D943C88C4590"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKClient_EVSTARSHOV/Controllers/FriendsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "FriendsTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9206CBFC-72B2-451C-BB98-D943C88C4590 - 31a54fdea0bb7305"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient_EVSTARSHOV.FriendsTableViewController.__allocating_init(style: __C.UITableViewStyle) -&gt; VKClient_EVSTARSHOV.FriendsTableViewController"
+                  moduleName = "VKClient_EVSTARSHOV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijstarsov/Downloads/VKCli_EVStarshov-main/VKClient_EVSTARSHOV/VKClient_EVSTARSHOV/Controllers/FriendsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "9206CBFC-72B2-451C-BB98-D943C88C4590 - b9043414e3a5ad20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient_EVSTARSHOV.FriendsTableViewController.init(style: __C.UITableViewStyle) -&gt; VKClient_EVSTARSHOV.FriendsTableViewController"
+                  moduleName = "VKClient_EVSTARSHOV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijstarsov/Downloads/VKCli_EVStarshov-main/VKClient_EVSTARSHOV/VKClient_EVSTARSHOV/Controllers/FriendsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "9206CBFC-72B2-451C-BB98-D943C88C4590 - e4ee448962dd3d3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient_EVSTARSHOV.FriendsTableViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; VKClient_EVSTARSHOV.FriendsTableViewController"
+                  moduleName = "VKClient_EVSTARSHOV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijstarsov/Downloads/VKCli_EVStarshov-main/VKClient_EVSTARSHOV/VKClient_EVSTARSHOV/Controllers/FriendsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "9206CBFC-72B2-451C-BB98-D943C88C4590 - be211f7303c4e2e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient_EVSTARSHOV.FriendsTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; VKClient_EVSTARSHOV.FriendsTableViewController"
+                  moduleName = "VKClient_EVSTARSHOV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijstarsov/Downloads/VKCli_EVStarshov-main/VKClient_EVSTARSHOV/VKClient_EVSTARSHOV/Controllers/FriendsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "9206CBFC-72B2-451C-BB98-D943C88C4590 - d624c8e0d89b57b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient_EVSTARSHOV.FriendsTableViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;VKClient_EVSTARSHOV.FriendsTableViewController&gt;"
+                  moduleName = "VKClient_EVSTARSHOV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijstarsov/Downloads/VKCli_EVStarshov-main/VKClient_EVSTARSHOV/VKClient_EVSTARSHOV/Controllers/FriendsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "9206CBFC-72B2-451C-BB98-D943C88C4590 - 550a7b1da353970d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient_EVSTARSHOV.FriendsTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;VKClient_EVSTARSHOV.FriendsTableViewController&gt;"
+                  moduleName = "VKClient_EVSTARSHOV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijstarsov/Downloads/VKCli_EVStarshov-main/VKClient_EVSTARSHOV/VKClient_EVSTARSHOV/Controllers/FriendsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "9206CBFC-72B2-451C-BB98-D943C88C4590 - d1c74b61bd770dac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient_EVSTARSHOV.FriendsTableViewController.__deallocating_deinit"
+                  moduleName = "VKClient_EVSTARSHOV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijstarsov/Downloads/VKCli_EVStarshov-main/VKClient_EVSTARSHOV/VKClient_EVSTARSHOV/Controllers/FriendsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
