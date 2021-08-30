@@ -10,7 +10,7 @@ import UIKit
 class FriendsTableViewController: UITableViewController {
     
     private let friendsArray = [
-        Friends(image: UIImage(named: "Алена"), name: "Алена Харитонова", groups: "Cлавяне"),
+        Friends(image: UIImage(named: "Алена"), name: "Алена Харитонова", groups: "Cлавянки"),
         Friends(image: UIImage(named: "Елена"), name: "Елена Филатова", groups: "Спортсменки"),
         Friends(image: UIImage(named: "Мария"), name: "Мария Кичук", groups: "Отличницы")
         ]
@@ -47,6 +47,10 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true)
         }
+        performSegue(
+            withIdentifier: "showPhotoSegue",
+            sender: nil)
+    
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         54.0
