@@ -205,7 +205,7 @@
                     <navigationItem key="navigationItem" id="GCd-Lf-hS2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7lw-qF-jzH">
                             <connections>
-                                <segue destination="W7v-ly-R0g" kind="show" id="Wos-ft-GUi"/>
+                                <segue destination="xPz-En-YRH" kind="show" id="jWc-TQ-ig8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -214,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="2546" y="611"/>
         </scene>
-        <!--View Controller-->
+        <!--Friends Collection View Controller-->
         <scene sceneID="m8B-xo-sKJ">
             <objects>
-                <viewController id="W7v-ly-R0g" sceneMemberID="viewController">
+                <viewController id="W7v-ly-R0g" customClass="FriendsCollectionViewController" customModule="VKClient_EVSTARSHOV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KX3-Mu-4Yf">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,32 +233,39 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6kM-5Y-xOW">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="6kM-5Y-xOW">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Jw-uT-7BS">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Wl-qA-hOT">
-                                                    <rect key="frame" x="8" y="21" width="133" height="99"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Wl-qA-hOT">
+                                                    <rect key="frame" x="0.0" y="21" width="128" height="86"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQm-Bt-0jt">
-                                                    <rect key="frame" x="43" y="-8" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQm-Bt-0jt">
+                                                    <rect key="frame" x="43" y="1" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFa-u2-YZS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFa-u2-YZS">
                                                     <rect key="frame" x="43" y="107" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zQm-Bt-0jt" firstAttribute="centerX" secondItem="0Jw-uT-7BS" secondAttribute="centerX" id="5XJ-Vz-9fJ"/>
+                                                <constraint firstItem="aFa-u2-YZS" firstAttribute="top" secondItem="0Wl-qA-hOT" secondAttribute="bottom" id="LCr-JU-m7O"/>
+                                                <constraint firstItem="aFa-u2-YZS" firstAttribute="centerX" secondItem="0Jw-uT-7BS" secondAttribute="centerX" id="Oyq-Si-goo"/>
+                                                <constraint firstItem="0Wl-qA-hOT" firstAttribute="leading" secondItem="0Jw-uT-7BS" secondAttribute="leading" id="g04-cB-iNt"/>
+                                                <constraint firstItem="zQm-Bt-0jt" firstAttribute="top" secondItem="0Jw-uT-7BS" secondAttribute="top" constant="1" id="j0r-44-JwL"/>
+                                                <constraint firstItem="0Wl-qA-hOT" firstAttribute="centerY" secondItem="0Jw-uT-7BS" secondAttribute="centerY" id="jfK-F5-BCG"/>
+                                                <constraint firstItem="aFa-u2-YZS" firstAttribute="centerX" secondItem="0Wl-qA-hOT" secondAttribute="centerX" id="lTO-tj-PMO"/>
+                                                <constraint firstAttribute="bottom" secondItem="aFa-u2-YZS" secondAttribute="bottom" id="mLL-1v-XP4"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
@@ -271,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2h-1d-5rM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3473.8461538461538" y="610.66350710900474"/>
+            <point key="canvasLocation" x="3616.9230769230767" y="-436.49289099526067"/>
         </scene>
         <!--Friends Table View Controller-->
         <scene sceneID="kn3-jm-Q2F">
@@ -299,7 +306,7 @@
                     <navigationItem key="navigationItem" id="Z4k-np-Hrf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="za5-Sr-g5Y">
                             <connections>
-                                <segue destination="xPz-En-YRH" kind="show" id="7qB-NM-ERJ"/>
+                                <segue destination="W7v-ly-R0g" kind="show" identifier="showPhotoSegue" id="v6n-8I-m6A"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -337,7 +344,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWy-Ug-E60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3581.5384615384614" y="-436.49289099526067"/>
+            <point key="canvasLocation" x="3458" y="611"/>
         </scene>
     </scenes>
     <resources>

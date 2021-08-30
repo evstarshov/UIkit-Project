@@ -47,6 +47,10 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true)
         }
+        performSegue(
+            withIdentifier: "showPhotoSegue",
+            sender: nil)
+    
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         54.0
