@@ -7,21 +7,28 @@
 
 import UIKit
 
-private let reuseIdentifier = "PhotoCell"
-
 class FriendsCollectionViewController: UICollectionViewController {
 
+    private let friendsArray = [
+        Friends(image: UIImage(named: "Алена"), name: "Алена Харитонова", groups: "Cлавянки"),
+        Friends(image: UIImage(named: "Елена"), name: "Елена Филатова", groups: "Спортсменки"),
+        Friends(image: UIImage(named: "Мария"), name: "Мария Кичук", groups: "Отличницы")
+        ]
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
 
         // Do any additional setup after loading the view.
-    }
+    
 
     /*
     // MARK: - Navigation
@@ -35,21 +42,22 @@ class FriendsCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    //override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        friendsArray.count
-    }
+     //   friendsArray.count
+    //}
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        friendsArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as?  FriendsCollectionCell
+         else {return UICollectionViewCell()}
     
-        // Configure the cell
+        cell.configure(with: friendsArray[indexPath.item])
     
         return cell
     }
@@ -85,4 +93,10 @@ class FriendsCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension FriendsCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: 150.0, height: 150.0)
+    }
 }
