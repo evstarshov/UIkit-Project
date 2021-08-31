@@ -8,12 +8,6 @@
 import UIKit
 
 class GroupTableViewController: UITableViewController {
-    
-    private var groupsArray = [
-        Groups(groupname: "Спортсменки", groupimage: UIImage(named: "Спортсменка")),
-        Groups(groupname: "Славянки", groupimage: UIImage(named: "Славянка")),
-        Groups(groupname: "Отличницы", groupimage: UIImage(named: "Отличница"))
-    ]
 
 
     override func viewDidLoad() {
