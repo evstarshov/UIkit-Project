@@ -2,12 +2,27 @@
 
 import UIKit
 
+class AvatarVievController: UIViewController {
+    
+    @IBOutlet var avatarImage: AvatarImage!
+    @IBOutlet var avatarLabel: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let avatar = avatarImage else {
+            return
+        }
+        avatar.image = UIImage(named: "Алена")
+    }
+}
+
 //@IBDesignable
 class AvatarImage: UIImageView {
     
     @IBInspectable var borderColor: UIColor = .gray
     @IBInspectable var borderWidth: CGFloat = 1.5
-    
     override func awakeFromNib() {
         self.layer.cornerRadius = self.frame.height / 2
         self.layer.masksToBounds = true
