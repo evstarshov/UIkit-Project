@@ -118,17 +118,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="THA-jX-ecS" customClass="AvatarImage" customModule="VKClient_EVSTARSHOV" customModuleProvider="target">
-                                <rect key="frame" x="109" y="126" width="173" height="172"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQH-qf-htw">
-                                <rect key="frame" x="109" y="325" width="173" height="21"/>
+                                <rect key="frame" x="16" y="328" width="173" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PHL-Rj-B6t" customClass="AvatarBackShadow" customModule="VKClient_EVSTARSHOV" customModuleProvider="target">
+                                <rect key="frame" x="109" y="123" width="173" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="THA-jX-ecS" customClass="AvatarImage" customModule="VKClient_EVSTARSHOV" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="172"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAI-zu-wbl">
+                                <rect key="frame" x="279" y="352" width="11" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpu-lo-tA3">
+                                <rect key="frame" x="274" y="328" width="21" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="heart"/>
+                                <connections>
+                                    <action selector="likePressed:" destination="zKM-0D-J9v" eventType="touchUpInside" id="u5Q-JV-bbc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZXi-5y-xOS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -137,6 +159,8 @@
                     <connections>
                         <outlet property="avatarImage" destination="THA-jX-ecS" id="2I4-TB-bSa"/>
                         <outlet property="avatarLabel" destination="HQH-qf-htw" id="QKU-ap-r0j"/>
+                        <outlet property="likeButton" destination="dpu-lo-tA3" id="woc-45-Qm2"/>
+                        <outlet property="likeLabel" destination="XAI-zu-wbl" id="zbu-mO-6bZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ig-IH-Zzk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -390,6 +414,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" width="860" height="792"/>
         <image name="vk" width="900" height="900"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

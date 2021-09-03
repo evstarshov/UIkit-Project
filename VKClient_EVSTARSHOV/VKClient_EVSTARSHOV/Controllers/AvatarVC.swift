@@ -6,6 +6,10 @@ class AvatarVievController: UIViewController {
     
     @IBOutlet var avatarImage: AvatarImage!
     @IBOutlet var avatarLabel: UILabel!
+    @IBOutlet var likeButton: UIButton!
+    @IBOutlet var likeLabel: UILabel!
+    var likes = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -15,7 +19,26 @@ class AvatarVievController: UIViewController {
             return
         }
         avatar.image = UIImage(named: "Алена")
+        likeButton.setImage(UIImage(named: "heart"), for: .normal)
     }
+
+    @IBAction func likePressed(_ sender: Any) {
+        if likeButton.isSelected == false {
+        print("Liked")
+
+        likeButton.isSelected = true
+        likes += 1
+        likeLabel.text = String(likes)
+        likeButton.setImage(UIImage(named: "heartfill"), for: .selected)
+        } else {
+            print("Disliked")
+            likeButton.isSelected = false
+            likes -= 1
+            likeLabel.text = String(likes)
+        }
+        
+    }
+
 }
 
 //@IBDesignable
