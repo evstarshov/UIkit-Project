@@ -27,6 +27,7 @@
 		3A4E8BAA26D7A862003B01B5 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E8BA826D7A862003B01B5 /* FriendsTableViewCell.swift */; };
 		3A4E8BAB26D7A862003B01B5 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E8BA926D7A862003B01B5 /* FriendsTableViewCell.xib */; };
 		3A4E8BAD26D7DB4F003B01B5 /* groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E8BAC26D7DB4F003B01B5 /* groups.swift */; };
+		3A72C8F926E7417B006A8480 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C8F826E7417B006A8480 /* AddFriendViewController.swift */; };
 		3AC0C52626D76B0D00AB3DB5 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0C52526D76B0D00AB3DB5 /* FriendsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		3A4E8BA826D7A862003B01B5 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		3A4E8BA926D7A862003B01B5 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
 		3A4E8BAC26D7DB4F003B01B5 /* groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groups.swift; sourceTree = "<group>"; };
+		3A72C8F826E7417B006A8480 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		3AC0C52526D76B0D00AB3DB5 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				3A0E22A126D9F96E00970B82 /* FriendsCollectionViewController.swift */,
 				3A0E22A926DE26B800970B82 /* AvatarVC.swift */,
 				3A0E22AD26DE37F900970B82 /* UIColor + Ext.swift */,
+				3A72C8F826E7417B006A8480 /* AddFriendViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				3A0E22AE26DE37F900970B82 /* UIColor + Ext.swift in Sources */,
 				3A0E22A226D9F96E00970B82 /* FriendsCollectionViewController.swift in Sources */,
 				3A4E8BA426D79D84003B01B5 /* friends.swift in Sources */,
+				3A72C8F926E7417B006A8480 /* AddFriendViewController.swift in Sources */,
 				3A4E8BAD26D7DB4F003B01B5 /* groups.swift in Sources */,
 				3A0E22A026D7EA8800970B82 /* GroupTableViewController.swift in Sources */,
 			);

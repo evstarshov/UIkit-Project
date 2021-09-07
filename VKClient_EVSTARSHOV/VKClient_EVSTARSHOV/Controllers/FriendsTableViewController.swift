@@ -51,7 +51,7 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         54.0
     }
-    
+    /*
     @IBAction func addFriend(_ sender: Any) {
         let addName = UIAlertController(
         title: "Добавить друга",
@@ -82,4 +82,6 @@ class FriendsTableViewController: UITableViewController {
         present(addGroup, animated: true)
         //friendsArray.append(Friends(image: nil, name: getName, groups: submitGroup))
     }
+    */
 }
+
