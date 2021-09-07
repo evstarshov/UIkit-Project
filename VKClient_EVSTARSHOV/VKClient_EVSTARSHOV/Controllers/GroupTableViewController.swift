@@ -9,83 +9,89 @@ import UIKit
 
 class GroupTableViewController: UITableViewController {
 
+    @IBOutlet var searchGroupBar: UISearchBar!
+    
+    var groups = [Groups]() {
+    didSet {
+        filteredGroups = groups
+        }
+    }
+    
+    private var filteredGroups = [Groups]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        guard
+            segue.identifier == "addGroupSegue",
+        let vc = segue.source as? AllGroupsTableViewController,
+            let index = vc.tableView.indexPathForSelectedRow?.row
+        else { return }
+        let group = vc.groups[index]
+        if !groups.contains(group) {
+            groups.append(group)
+        }
+    }
+        
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        searchGroupBar.delegate = self
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        groupsArray.count
+        filteredGroups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(
                 withIdentifier: "groupsCell",
                 for: indexPath)
-        let index = IndexPath(row: 1, section: 0)
-        let currentGroup = groupsArray[indexPath.row]
-        cell.textLabel?.text = groupsArray[indexPath.row].groupname
-        cell.imageView?.image = groupsArray[indexPath.row].groupimage
+        //let index = IndexPath(row: 1, section: 0)
+        //let currentGroup = filteredGroups[indexPath.row]
+        cell.textLabel?.text = filteredGroups[indexPath.row].groupname
+        cell.imageView?.image = filteredGroups[indexPath.row].groupimage
         cell.accessoryType = .disclosureIndicator
         cell.detailTextLabel?.text = ""
         return cell
     }
+}
+
+extension GroupTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterGroups(with: searchText)
+    }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        defer { tableView.deselectRow(at: indexPath, animated: true)
+    private func filterGroups(with text: String) {
+        guard  !text.isEmpty else {
+            filteredGroups = groups
+            tableView.reloadData()
+            return
+        }
+        filteredGroups = groups.filter {
+            $0.groupname.lowercased().contains(text.lowercased()) }
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+extension GroupTableViewController {
+    private func sort(_ groupsArray: [Groups]) -> (characters: [Character], sortedGroups: [Character: [Groups]]) {
+        var letters = [Character]()
+        var sortedGroups = [Character: [Groups]]()
+        
+        groupsArray.forEach { group in
+            guard let character = group.groupname.first else { return }
+            if var thisCharGroups = sortedGroups[character] {
+                thisCharGroups.append(group)
+                sortedGroups[character] = thisCharGroups
+            } else {
+                sortedGroups[character] = [group]
+                letters.append(character)
+            }
+        }
+        letters.sort()
+        
+        return (letters, sortedGroups)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
