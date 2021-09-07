@@ -20,8 +20,23 @@ class AddFriendViewController: UIViewController {
     }
 
     @IBAction func addFriend(_ sender: Any) {
-        friendsArray.append(Friends(image: nil, name: addNameTextField.text!, groups: addGroupTextField.text!))
-        performSegue(withIdentifier: "friendAddedSegue", sender: pressOkButton)
+
+        if addGroupTextField.text == ""
+            && addNameTextField.text == "" {
+            let alertController = UIAlertController(
+                title: "Ошибка",
+                message: "Вы не заполнили поля",
+                preferredStyle: .alert)
+            let alertItem = UIAlertAction(
+                title: "Ok",
+                style: .cancel)
+            alertController.addAction(alertItem)
+            present(alertController, animated: true, completion: nil)
+        }
+        else {
+            friendsArray.append(Friends(image: nil, name: addNameTextField.text!, groups: addGroupTextField.text!))
+            performSegue(withIdentifier: "friendAddedSegue", sender: pressOkButton)
+        }
     }
     
 }

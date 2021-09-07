@@ -20,7 +20,7 @@ class FriendsTableViewController: UITableViewController {
                            forCellReuseIdentifier: "myfriendCell")
     }
 
-    // MARK: - Table view data source
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         friendsArray.count
     }
@@ -40,6 +40,7 @@ class FriendsTableViewController: UITableViewController {
         return cell
     }
     
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -51,37 +52,6 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         54.0
     }
-    /*
-    @IBAction func addFriend(_ sender: Any) {
-        let addName = UIAlertController(
-        title: "Добавить друга",
-        message: nil,
-        preferredStyle: .alert
-        )
-        addName.addTextField()
-        
-        func getName() -> String {
-        let submitName = UIAlertAction(title: "Ok", style: .default) { [unowned addName] _ in
-        let answerName = addName.textFields![0]
-            return answerName
-        }
-        addName.addAction(submitName)
-        present(addName, animated: true)
-        }
-        
-        print(getName())
-        let addGroup = UIAlertController(
-        title: "В какой он группе?",
-        message: nil,
-        preferredStyle: .alert
-        )
-        addGroup.addTextField()
-        let submitGroup = UIAlertAction(title: "Ok", style: .default)
-        addGroup.addAction(submitGroup)
-        
-        present(addGroup, animated: true)
-        //friendsArray.append(Friends(image: nil, name: getName, groups: submitGroup))
-    }
-    */
+
 }
 
