@@ -116,7 +116,7 @@
             <objects>
                 <viewController id="zKM-0D-J9v" customClass="AvatarVievController" customModule="VKClient_EVSTARSHOV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bll-Rg-ZsQ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQH-qf-htw">
@@ -281,11 +281,11 @@
             </objects>
             <point key="canvasLocation" x="2546" y="611"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Новости-->
         <scene sceneID="Hkb-F0-y1E">
             <objects>
-                <tableViewController id="HFV-K5-mAn" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yI7-OL-v2g">
+                <tableViewController id="HFV-K5-mAn" customClass="NewsTableViewController" customModule="VKClient_EVSTARSHOV" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="yI7-OL-v2g">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -304,7 +304,7 @@
                             <outlet property="delegate" destination="HFV-K5-mAn" id="05h-Ej-q37"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="LxB-NZ-4sP"/>
+                    <navigationItem key="navigationItem" title="Новости" id="LxB-NZ-4sP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mih-5a-wS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,7 +332,7 @@
             <objects>
                 <tableViewController id="gEG-0g-awd" customClass="FriendsTableViewController" customModule="VKClient_EVSTARSHOV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kv8-Ef-ezQ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="u4k-Ur-4Pn" customClass="FriendsTableHeader" customModule="VKClient_EVSTARSHOV" customModuleProvider="target">
@@ -391,7 +391,7 @@
             <objects>
                 <viewController id="dKy-gn-yNh" customClass="AddFriendViewController" customModule="VKClient_EVSTARSHOV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vhz-CV-rmB">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ri5-eE-9ky">
@@ -447,7 +447,7 @@
             <objects>
                 <collectionViewController id="FM5-Qn-jxe" customClass="FriendsCollectionViewController" customModule="VKClient_EVSTARSHOV" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7Gq-qe-hSh">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MsI-dY-VG3">
@@ -554,7 +554,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="a1H-5k-ZLM"/>
+        <segue reference="uzo-wP-3dm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" width="860" height="792"/>
