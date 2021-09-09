@@ -9,18 +9,43 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
+    @IBOutlet var searchFriendsBar: UISearchBar!
+    @IBOutlet var tableViewHeader: FriendsTableHeader!
+    
+    private var friends = [Friends]() {
+        didSet {
+            filteredFriends = friends
+        }
+    }
+    
+    private var filteredFriends = [Friends]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchFriendsBar.delegate = self
         tableView.register(
             UINib(
                            nibName: "FriendsTableViewCell",
                             bundle: nil),
                            forCellReuseIdentifier: "myfriendCell")
+    
+        // ----- Загрузка титульного изображения
+        
+        tableView.register(AllFriendsSectionHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
+        
+        tableViewHeader.imageView.image = UIImage(named: "tableHeader3")
+        tableViewHeader.imageView.contentMode = .scaleAspectFill
+        tableView.tableHeaderView = tableViewHeader
     }
+    
+    // ----- Загрузка титульного изображения
 
-    // MARK: - Table view data source
+    // ----- Наполнение строк элементами массива
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         friendsArray.count
     }
@@ -31,14 +56,25 @@ class FriendsTableViewController: UITableViewController {
                 for: indexPath) as? FriendsTableViewCell
         else { return UITableViewCell() }
         cell.configure(friend: friendsArray[indexPath.row])
-        //let index = IndexPath(row: 1, section: 0)
-        //let currentFriend = friendsArray[indexPath.row]
-        //cell.textLabel?.text = friendsArray[indexPath.row].name
-        //cell.imageView?.image = friendsArray[indexPath.row].image
-        //cell.accessoryType = .disclosureIndicator
-        //cell.detailTextLabel?.text = ""
         return cell
     }
+    // ----- Наполнение строк элементами массива
+    
+    
+   // ----- Титульная строка
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let sectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "sectionHeader") as? AllFriendsSectionHeader
+        else {return nil}
+        sectionHeader.contentView.backgroundColor = .systemBlue
+        return sectionHeader
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "Все друзья"
+    }
+    // ------ Титульная строка
+    
+    // ------ Переход на экран коллекции
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true)
@@ -48,38 +84,53 @@ class FriendsTableViewController: UITableViewController {
             sender: nil)
     
     }
+    
+    // ------ Переход на экран коллекции
+    
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         54.0
     }
+
+}
+
+// ---- Расширения для работы поисковой строки
+
+extension FriendsTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterFriends(with: searchText)
+    }
     
-    @IBAction func addFriend(_ sender: Any) {
-        let addName = UIAlertController(
-        title: "Добавить друга",
-        message: nil,
-        preferredStyle: .alert
-        )
-        addName.addTextField()
-        
-        func getName() -> String {
-        let submitName = UIAlertAction(title: "Ok", style: .default) { [unowned addName] _ in
-        let answerName = addName.textFields![0]
-            return answerName
-        }
-        addName.addAction(submitName)
-        present(addName, animated: true)
+    private func filterFriends(with text: String) {
+        guard !text.isEmpty else {
+            filteredFriends = friendsArray
+            tableView.reloadData()
+            return
         }
         
-        print(getName())
-        let addGroup = UIAlertController(
-        title: "В какой он группе?",
-        message: nil,
-        preferredStyle: .alert
-        )
-        addGroup.addTextField()
-        let submitGroup = UIAlertAction(title: "Ok", style: .default)
-        addGroup.addAction(submitGroup)
-        
-        present(addGroup, animated: true)
-        //friendsArray.append(Friends(image: nil, name: getName, groups: submitGroup))
+        filteredFriends = friendsArray.filter { $0.name.lowercased().contains(text.lowercased()) }
     }
 }
+
+
+extension FriendsTableViewController {
+    private func sort(_ friendsArray: [Friends]) -> (characters: [Character], sortedFriends: [Character: [Friends]]) {
+        var letters = [Character]()
+        var sortedFriends = [Character: [Friends]]()
+        
+        friendsArray.forEach { friend in
+            guard let character = friend.name.first else { return }
+            if var thisCharFriends = sortedFriends[character] {
+                thisCharFriends.append(friend)
+                sortedFriends[character] = thisCharFriends
+            } else {
+                sortedFriends[character] = [friend]
+                letters.append(character)
+            }
+        }
+        letters.sort()
+        
+        return (letters, sortedFriends)
+    }
+}
+// ---- Расширения для работы поисковой строки

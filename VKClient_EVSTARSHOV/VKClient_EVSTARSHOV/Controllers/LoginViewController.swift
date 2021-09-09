@@ -70,9 +70,6 @@ class LoginViewController: UIViewController {
         } else {
             return false
         }
-//        loginTextField.text == "" && passwordTextField.text == ""
     }
-
-
 }
 

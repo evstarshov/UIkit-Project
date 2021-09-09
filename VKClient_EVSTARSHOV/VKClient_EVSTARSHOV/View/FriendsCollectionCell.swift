@@ -18,5 +18,6 @@ class FriendsCollectionCell: UICollectionViewCell {
         friendsLabel.text = friends.name
         friendsImageView.image = friends.image
         groupLabel.text = friends.groups
+        contentMode = .scaleAspectFill
     }
 }

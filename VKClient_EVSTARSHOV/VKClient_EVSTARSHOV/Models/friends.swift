@@ -18,3 +18,10 @@ var friendsArray = [
     Friends(image: UIImage(named: "Елена"), name: "Елена Филатова", groups: "Спортсменки"),
     Friends(image: UIImage(named: "Мария"), name: "Мария Кичук", groups: "Отличницы")
     ]
+
+extension Friends: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.name == rhs.name && lhs.groups == rhs.groups
+    }
+    
+}
