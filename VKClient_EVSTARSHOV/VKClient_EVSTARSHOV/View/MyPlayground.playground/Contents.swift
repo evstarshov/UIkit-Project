@@ -1,11 +1,6 @@
-//
-//  friends.swift
-//  VKClient_EVSTARSHOV
-//
-//  Created by Евгений Старшов on 26.08.2021.
-//
-
 import UIKit
+
+var greeting = "Hello, playground"
 
 struct Friends {
     let image: UIImage?
@@ -20,9 +15,6 @@ var friendsArray = [
     Friends(image: UIImage(named: "Мария"), name: "Мария ", secondname: "Кичук", groups: "Отличницы")
     ]
 
-extension Friends: Equatable {
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.name == rhs.name && lhs.groups == rhs.groups
-    }
-    
-}
+var sortedByletter = friendsArray.sorted(by: {$0.secondname < $1.secondname})
+
+print(sortedByletter)
