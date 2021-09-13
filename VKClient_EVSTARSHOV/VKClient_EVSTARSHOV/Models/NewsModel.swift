@@ -10,6 +10,8 @@ import UIKit
 
 var newsArray = [NewsModel(ntitle: "Реалистик!", ntext: "Топ залайканных постов за неделю. 💟 Какой арт лучше?", nimage: UIImage(named: "newsImage"), commenttext: "Liked!", nfriend: friendsArray[1])]
 
+var commentsArray = [Comments(ncomment: "Вот это задница"), Comments(ncomment: "Лайк")]
+
 class NewsModel {
 
     
@@ -31,4 +33,11 @@ class NewsModel {
 
 func loadNewsData() {
     _ = newsArray
+}
+
+class Comments {
+    let commentarium: String?
+    init(ncomment: String){
+        self.commentarium = ncomment
+    }
 }

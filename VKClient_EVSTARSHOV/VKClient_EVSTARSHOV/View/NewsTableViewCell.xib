@@ -56,13 +56,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="P39-yi-NiS">
                                         <rect key="frame" x="40" y="0.0" width="254" height="86.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lt-xu-ZDZ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lt-xu-ZDZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIA-fO-xto">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIA-fO-xto">
                                                 <rect key="frame" x="0.0" y="74.5" width="254" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <nil key="textColor"/>
@@ -78,10 +78,13 @@
                                     <constraint firstAttribute="width" secondItem="G9j-bU-lc7" secondAttribute="height" multiplier="10:9" id="U7A-d3-x6l"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mCw-5y-cOy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" translatesAutoresizingMaskIntoConstraints="NO" id="8HW-fQ-LlQ">
                                 <rect key="frame" x="0.0" y="385" width="294" height="27"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8HW-fQ-LlQ" id="KRL-HC-Qc5" customClass="CommentTableViewCell" customModule="VKClient_EVSTARSHOV" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="294" height="27"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9a5-XN-hMB">
                                 <rect key="frame" x="0.0" y="429" width="294" height="28"/>
                                 <subviews>
@@ -92,6 +95,9 @@
                                             <constraint firstAttribute="width" constant="32" id="XmO-NO-Ws4"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="heart"/>
+                                        <connections>
+                                            <action selector="likeBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7VX-BF-iOL"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcd-NU-njk">
                                         <rect key="frame" x="40" y="0.0" width="10.5" height="28"/>
@@ -118,6 +124,9 @@
                                         <state key="normal" title="Опубликовать">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="submitBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kgB-XV-bh2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -134,14 +143,15 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatarImageCell" destination="4v1-6o-a8E" id="MZx-AL-QqM"/>
-                <outlet property="commentTextField" destination="kOf-72-Hm0" id="KOb-D3-64d"/>
-                <outlet property="commentsTable" destination="mCw-5y-cOy" id="r52-2X-qn1"/>
+                <outlet property="commentTextField" destination="kOf-72-Hm0" id="Kk3-IA-iKB"/>
+                <outlet property="commentsTable" destination="KRL-HC-Qc5" id="SMH-JO-zlT"/>
                 <outlet property="friendLabelCell" destination="yeF-xE-h7Z" id="GAD-MK-lnV"/>
-                <outlet property="likeBtn" destination="06d-ss-nwD" id="dce-XE-Ykf"/>
+                <outlet property="likeBtn" destination="06d-ss-nwD" id="i47-OA-5nw"/>
+                <outlet property="likesLabelCell" destination="Bcd-NU-njk" id="fYQ-am-Dzx"/>
                 <outlet property="newsImageCell" destination="G9j-bU-lc7" id="mIt-Rq-jRa"/>
                 <outlet property="newsTextCell" destination="vIA-fO-xto" id="dSb-IS-UP8"/>
                 <outlet property="newsTitleCell" destination="4Lt-xu-ZDZ" id="M5Q-BC-BGA"/>
-                <outlet property="submitBtn" destination="sfm-BG-2Y4" id="dUu-lt-nRS"/>
+                <outlet property="submitBtn" destination="sfm-BG-2Y4" id="cfE-7C-yCe"/>
             </connections>
             <point key="canvasLocation" x="-53.623188405797109" y="-252.12053571428569"/>
         </tableViewCell>

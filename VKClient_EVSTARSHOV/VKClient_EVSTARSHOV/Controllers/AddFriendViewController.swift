@@ -10,6 +10,7 @@ import UIKit
 class AddFriendViewController: UIViewController {
 
     @IBOutlet var addNameTextField: UITextField!
+    @IBOutlet var addSecondNameTextField: UITextField!
     @IBOutlet var addGroupTextField: UITextField!
     @IBOutlet var pressOkButton: UIButton!
     
@@ -22,7 +23,7 @@ class AddFriendViewController: UIViewController {
     @IBAction func addFriend(_ sender: Any) {
 
         if addGroupTextField.text == ""
-            && addNameTextField.text == "" {
+            && addNameTextField.text == ""{
             let alertController = UIAlertController(
                 title: "Ошибка",
                 message: "Вы не заполнили поля",
@@ -34,7 +35,7 @@ class AddFriendViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
         }
         else {
-            friendsArray.append(Friends(image: nil, name: addNameTextField.text!, groups: addGroupTextField.text!))
+            friendsArray.append(Friends(image: nil, name: addNameTextField.text! + " ", secondname: addSecondNameTextField.text!, groups: addGroupTextField.text!))
             performSegue(withIdentifier: "friendAddedSegue", sender: pressOkButton)
         }
     }

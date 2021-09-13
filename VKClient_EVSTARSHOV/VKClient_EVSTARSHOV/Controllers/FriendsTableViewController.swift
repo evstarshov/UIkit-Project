@@ -12,6 +12,7 @@ class FriendsTableViewController: UITableViewController {
     @IBOutlet var searchFriendsBar: UISearchBar!
     @IBOutlet var tableViewHeader: FriendsTableHeader!
     
+    
     private var friends = [Friends]() {
         didSet {
             filteredFriends = friends
@@ -23,7 +24,8 @@ class FriendsTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-
+    
+    private var sortedByletter = friendsArray.sorted(by: {$0.secondname < $1.secondname})
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,7 @@ class FriendsTableViewController: UITableViewController {
 
     // ----- Наполнение строк элементами массива
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        friendsArray.count
+        sortedByletter.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,7 +57,7 @@ class FriendsTableViewController: UITableViewController {
                 withIdentifier: "myfriendCell",
                 for: indexPath) as? FriendsTableViewCell
         else { return UITableViewCell() }
-        cell.configure(friend: friendsArray[indexPath.row])
+        cell.configure(friend: sortedByletter[indexPath.row])
         return cell
     }
     // ----- Наполнение строк элементами массива
@@ -91,7 +93,33 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         54.0
     }
-
+    // ------ Блок анимации
+    
+//    private func animate4() {
+//        CATransaction.setCompletionBlock {
+//            self.imageView.frame.origin.y += 100
+//        }
+//        
+//        CATransaction.begin()
+//        let animation = CASpringAnimation(keyPath: "position.y")
+//        animation.fromValue = imageView.layer.position.y
+//        animation.toValue = imageView.layer.position.y + 100
+//        animation.duration = duration
+//        animation.damping = 0.1
+//        animation.initialVelocity = 0.5
+//        animation.mass = 3
+//        animation.stiffness = 200
+//        animation.beginTime = CACurrentMediaTime() + 0.5
+////        animation.autoreverses = true
+//        imageView.layer.add(
+//            animation,
+//            forKey: nil)
+//        CATransaction.commit()
+//    }
+    
+    
+    // ------ Блок анимации
+    
 }
 
 // ---- Расширения для работы поисковой строки
@@ -114,12 +142,13 @@ extension FriendsTableViewController: UISearchBarDelegate {
 
 
 extension FriendsTableViewController {
-    private func sort(_ friendsArray: [Friends]) -> (characters: [Character], sortedFriends: [Character: [Friends]]) {
+    
+    private func sorting(_ friendsArray: [Friends]) -> (characters: [Character], sortedFriends: [Character: [Friends]]) {
         var letters = [Character]()
         var sortedFriends = [Character: [Friends]]()
         
         friendsArray.forEach { friend in
-            guard let character = friend.name.first else { return }
+            guard let character = friend.secondname.first else { return }
             if var thisCharFriends = sortedFriends[character] {
                 thisCharFriends.append(friend)
                 sortedFriends[character] = thisCharFriends
@@ -129,8 +158,12 @@ extension FriendsTableViewController {
             }
         }
         letters.sort()
+
         
         return (letters, sortedFriends)
     }
+    
 }
 // ---- Расширения для работы поисковой строки
+
+
