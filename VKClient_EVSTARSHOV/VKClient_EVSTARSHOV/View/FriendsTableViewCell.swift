@@ -10,7 +10,6 @@ import UIKit
 class FriendsTableViewCell: UITableViewCell {
 
     @IBOutlet var friendImageAvatar: AvatarImage!
-    @IBOutlet var friendGroupImage: UIImageView!
     @IBOutlet var friendNameLabel: UILabel!
     @IBOutlet var friendGroupLabel: UILabel!
     
@@ -22,7 +21,7 @@ class FriendsTableViewCell: UITableViewCell {
     func configure(friend: Friends) {
         friendImageAvatar.image = friend.image
 //        friendGroupImage.image = nil
-        friendNameLabel.text = friend.name
+        friendNameLabel.text = friend.name + friend.secondname
         friendGroupLabel.text = friend.groups
         contentMode = .scaleAspectFill
     }

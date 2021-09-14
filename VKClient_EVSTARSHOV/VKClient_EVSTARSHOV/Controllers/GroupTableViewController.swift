@@ -50,8 +50,6 @@ class GroupTableViewController: UITableViewController {
      let cell = tableView.dequeueReusableCell(
                 withIdentifier: "groupsCell",
                 for: indexPath)
-        //let index = IndexPath(row: 1, section: 0)
-        //let currentGroup = filteredGroups[indexPath.row]
         cell.textLabel?.text = filteredGroups[indexPath.row].groupname
         cell.imageView?.image = filteredGroups[indexPath.row].groupimage
         cell.accessoryType = .disclosureIndicator
