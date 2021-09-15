@@ -91,7 +91,7 @@ final class Animations: UIViewController {
             forKey: nil)
     }
     
-    private func animate4() {
+    func animate4() {
         CATransaction.setCompletionBlock {
             self.imageView.frame.origin.y += 100
         }

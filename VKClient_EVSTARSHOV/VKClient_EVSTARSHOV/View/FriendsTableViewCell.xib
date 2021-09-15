@@ -37,10 +37,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Zp-eG-jz1" customClass="AvatarImage" customModule="VKClient_EVSTARSHOV" customModuleProvider="target">
-                        <rect key="frame" x="16" y="9" width="27" height="27"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i7J-CL-IDJ" customClass="AvatarView" customModule="VKClient_EVSTARSHOV" customModuleProvider="target">
+                        <rect key="frame" x="6" y="7" width="29" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Zp-eG-jz1" customClass="AvatarImage" customModule="VKClient_EVSTARSHOV" customModuleProvider="target">
+                                <rect key="frame" x="1" y="2" width="27" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="xPR-Og-90S" firstAttribute="centerY" secondItem="xj9-Vh-pDR" secondAttribute="centerY" id="5ma-Gx-amy"/>
@@ -54,6 +61,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="avatarView" destination="i7J-CL-IDJ" id="I49-Fb-oUL"/>
                 <outlet property="friendGroupLabel" destination="xj9-Vh-pDR" id="TEr-Pe-ELX"/>
                 <outlet property="friendImageAvatar" destination="0Zp-eG-jz1" id="2ww-Oi-fVs"/>
                 <outlet property="friendNameLabel" destination="5ZA-qz-hjQ" id="cD7-hK-znl"/>
@@ -64,6 +72,9 @@
     <resources>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
