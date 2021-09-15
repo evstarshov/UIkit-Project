@@ -29,6 +29,16 @@ class AvatarVievController: UIViewController {
         likeButton.isSelected = true
         likes += 1
         likeLabel.text = String(likes)
+        likeButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            UIView.animate(withDuration: 1.6,
+                           delay: 0,
+                           usingSpringWithDamping: 0.4,
+                           initialSpringVelocity: 0.2,
+                           options: .curveEaseOut,
+                           animations: {
+                               self.likeButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+                           },
+                           completion: nil)
         likeButton.setImage(UIImage(named: "heartfill"), for: .selected)
         } else {
             print("Disliked")

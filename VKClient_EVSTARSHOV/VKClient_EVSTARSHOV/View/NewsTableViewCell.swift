@@ -33,6 +33,16 @@ class NewsTableViewCell: UITableViewCell {
             likeBtn.isSelected = true
         likes += 1
             likesLabelCell.text = String(likes)
+            likeBtn.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                UIView.animate(withDuration: 1.6,
+                               delay: 0,
+                               usingSpringWithDamping: 0.4,
+                               initialSpringVelocity: 0.2,
+                               options: .curveEaseOut,
+                               animations: {
+                                   self.likeBtn.transform = CGAffineTransform(scaleX: 1, y: 1)
+                               },
+                               completion: nil)
             likeBtn.setImage(UIImage(named: "heartfill"), for: .selected)
         } else {
             print("Disliked")

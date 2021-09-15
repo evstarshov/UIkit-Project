@@ -137,9 +137,9 @@ class FriendsTableViewController: UITableViewController {
         defer { tableView.deselectRow(at: indexPath, animated: true)
         }
         
-//        performSegue(
-//            withIdentifier: "showPhotoSegue",
-//            sender: nil)
+        performSegue(
+            withIdentifier: "showPhotoSegue",
+            sender: nil)
     
     }
     
@@ -151,10 +151,7 @@ class FriendsTableViewController: UITableViewController {
     }
     // ------ Блок анимации
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        <#code#>
-//    }
-    
+
     
     // ------ Блок анимации
     
