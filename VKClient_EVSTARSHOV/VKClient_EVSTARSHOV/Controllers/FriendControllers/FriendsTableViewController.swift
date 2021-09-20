@@ -139,9 +139,23 @@ class FriendsTableViewController: UITableViewController {
         
         performSegue(
             withIdentifier: "showPhotoSegue",
-            sender: nil)
+            sender: indexPath)
     
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedFriend = segue.destination as? FriendsCollectionViewController else {return}
+        let indexPath = sender as! IndexPath
+        let friends = groupedFriends[indexPath.section]
+        let friend = friends?[indexPath.row]
+        let togallery = friend?.gallery
+        selectedFriend.galleryItems = togallery!
+        
+    }
+    
+
+
     
     // ------ Переход на экран коллекции
     

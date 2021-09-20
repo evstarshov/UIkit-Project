@@ -2,62 +2,132 @@
 
 import UIKit
 
+enum SwipeDirection {
+    case left
+    case right
+}
+
 class AvatarVievController: UIViewController {
     
+    @IBOutlet var sliderArea: UIView!
+    @IBOutlet var sliderIndicator: UIStackView!
     @IBOutlet var avatarImage: UIImageView!
     @IBOutlet var avatarLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var likeLabel: UILabel!
+    //private var imageView: UIImageView?
+    private var indicatorImages = [UIImageView]()
     var likes = 0
     private var friend: Friends?
-    
-    let imagecollectionArray:[UIImage] = [
-        UIImage(named: "Алена")!,
-        UIImage(named: "Елена")!,
-        UIImage(named: "Мария")!,
-        UIImage(named: "Наталья")!
-
-    ]
-
-//    var friend: Friends? {
-//        didSet {
-//            if friend != nil {
-//            configureFriend(modelfriends: friend!)
-//            }
-//        }
-//    }
-//
-    //------------ Конфигурирование UIImage, UILabel
-    func configureFriend(modelfriends: Friends) {
-        friend = modelfriends
+    private var imagesArray: [PhotoGallery] = []
+    private var currentIndex: Int = 0 {
+        didSet {
+            changeimageLabel()
+            changeSliderIndicator()
+        }
     }
     
     
+    //private var imageLabel: UILabel?
+
+    //------------ Конфигурирование UIImage, UILabel
+    
+    
+    func setImage(images: [PhotoGallery], indexAt: Int) {
+        self.imagesArray = images
+        self.setSliderIndicator()
+        self.currentIndex = indexAt
+    }
+    
+    private func presentDefaultImage() {
+        avatarImage?.image = imagesArray[currentIndex].galleryImage
+        changeimageLabel()
+    }
+    
+    private func changeimageLabel() {
+        avatarLabel?.text = imagesArray[currentIndex].description
+    }
+
+    //--------- ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let friendData = friend else {return}
-        avatarImage?.image = friendData.image
-        avatarLabel?.text = friendData.name + friendData.secondname
-        
+        presentDefaultImage()
+        indicatorViewConfig()
+        changeimageLabel()
         
         let panGR = UIPanGestureRecognizer(
             target: self,
-            action: #selector(didPan(_:)))
-        avatarImage.isUserInteractionEnabled = true
-        avatarImage.addGestureRecognizer(panGR)
+            action: #selector(swipePan(_:)))
+        avatarImage?.isUserInteractionEnabled = true
+        avatarImage?.addGestureRecognizer(panGR)
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-////        guard let avatar = avatarImage else {
-////            return
-////        }
-////        avatar.image = UIImage(named: "Алена")
-//        likeButton.setImage(UIImage(named: "heart"), for: .normal)
-//    }
+    
+   // ------ индикатор слайдов
+    
+    private func setSliderIndicator() {
+        for _ in imagesArray.enumerated() {
+            let indicatorImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 5, height: 5))
+            indicatorImageView.image = UIImage(systemName: "circle.fill")
+            indicatorImageView.tintColor = UIColor.systemBlue
+            indicatorImages.append(indicatorImageView)
+        }
+    }
+    
+    private func indicatorViewConfig() {
+        for item in indicatorImages {
+            sliderIndicator.addArrangedSubview(item)
+        }
+    }
+    
+    private func changeSliderIndicator() {
+        for item in indicatorImages {
+            item.tintColor = UIColor.systemBlue
+        }
+        indicatorImages[currentIndex].tintColor = UIColor.red
+    }
+    
+    private func imageViewConfig() {
+        avatarImage = UIImageView(frame: sliderArea.bounds)
+        avatarImage?.contentMode = .scaleAspectFill
+        avatarImage?.isUserInteractionEnabled = true
+       
+        guard let imageView = avatarImage
+        else { return }
+        
+        sliderArea.addSubview(imageView)
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        let topConstraint = imageView.topAnchor.constraint(equalTo: sliderArea.topAnchor)
+        let leadingConstraint = imageView.leadingAnchor.constraint(equalTo: sliderArea.leadingAnchor)
+        let trailingConstraint = imageView.trailingAnchor.constraint(equalTo: sliderArea.trailingAnchor)
+        let bottomConstraint = imageView.bottomAnchor.constraint(equalTo: sliderArea.bottomAnchor)
+        sliderArea.addConstraints([topConstraint, leadingConstraint, trailingConstraint, bottomConstraint])
+    }
+    
+    private func imageLabelViewConfig() {
+        avatarLabel = UILabel()
+        avatarLabel?.adjustsFontSizeToFitWidth = true
+        avatarLabel?.backgroundColor = UIColor.lightGray
+        avatarLabel?.alpha = 0.8
+        avatarImage?.addSubview(avatarLabel ?? UILabel())
+        avatarLabel?.translatesAutoresizingMaskIntoConstraints = false
+
+        guard let imageLabel = avatarLabel,
+              let imageView = avatarImage
+        else { return }
+        
+        NSLayoutConstraint.activate([
+            imageLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
+            imageLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
+            imageLabel.heightAnchor.constraint(equalToConstant: 50),
+            imageLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor)
+        ])
+    }
+
 
     // ------- Кнопка лайк
+    
     @IBAction func likePressed(_ sender: Any) {
         if likeButton?.isSelected == false {
         print("Liked")
@@ -89,45 +159,74 @@ class AvatarVievController: UIViewController {
     // --------- Блок анимаций перелистывания
     
     
-    private var propertyAnimator: UIViewPropertyAnimator?
+   private var propertyAnimator: UIViewPropertyAnimator?
     
-    private var isAnimated = false
-    
-    private let duration = 2.0
-    private let delay = 0.5
-    
+
     @objc
-    private func didPan(_ gesture: UIPanGestureRecognizer){
+    private func swipePan(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: sliderArea)
         switch gesture.state {
         case .began:
             propertyAnimator = UIViewPropertyAnimator(
-                duration: duration,
+                duration: 2,
                 curve: .easeInOut,
                 animations: {
-                    let transform = CGAffineTransform(rotationAngle: .pi / 2)
-                    self.avatarImage.transform = transform
-                })
+                    self.avatarImage?.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                    self.avatarImage?.alpha = 0.8
+                }
+            )
             propertyAnimator?.pauseAnimation()
         case .changed:
-            let translation = gesture.translation(in: self.avatarImage)
-            propertyAnimator?.fractionComplete = -translation.y / 100
+            propertyAnimator?.fractionComplete = abs(translation.x / 100)
         case .ended:
-            if propertyAnimator?.fractionComplete ?? 0.0 > 0.5 {
-                propertyAnimator?.continueAnimation(
-                    withTimingParameters: nil,
-                    durationFactor: 0)
-            } else {
-                propertyAnimator?.stopAnimation(true)
-                propertyAnimator?.finishAnimation(at: .current)
+            propertyAnimator?.stopAnimation(true)
+            propertyAnimator?.finishAnimation(at: .current)
+
+            avatarImage?.transform = CGAffineTransform(scaleX: 1, y: 1)
+            avatarImage?.alpha = 1
+
+            if abs(translation.x) > 50 {
+                changeSlide(direction: translation.x > 0 ? SwipeDirection.left : SwipeDirection.right)
             }
-            
         default:
             return
         }
     }
-    
-    @IBAction func imagelisting (_ sender: Any?) {
-        
+
+    private func changeSlide(direction: SwipeDirection) {
+        var imageDirectionOffest: CGFloat = 1000
+        var showImage = false
+
+        switch direction {
+        case .left:
+            if currentIndex > 0 {
+                currentIndex -= 1
+                showImage = true
+            }
+            imageDirectionOffest *= -1
+        case .right:
+            if imagesArray.count - 1 > currentIndex {
+                currentIndex += 1
+                showImage = true
+            }
+        }
+
+        if showImage {
+            avatarImage?.image = imagesArray[currentIndex].galleryImage
+            // Hide off the screen
+            avatarImage?.center.x += imageDirectionOffest
+            sliderArea.addSubview(avatarImage ?? UIImageView())
+            
+            UIView.animate(
+                withDuration: 0.6,
+                delay: 0.0,
+                options: [.curveLinear, .transitionCrossDissolve]
+            ) {
+                self.avatarImage?.center.x += (imageDirectionOffest * -1)
+            }
+        }
     }
+    
+
 
 }

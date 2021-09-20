@@ -11,7 +11,8 @@ class FriendsCollectionCell: UICollectionViewCell {
 
     @IBOutlet var friendsLabel: UILabel!
     @IBOutlet var friendsImageView: UIImageView!
-    @IBOutlet var groupLabel: UILabel!
+
+    
     
     override func awakeFromNib() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapCollectionImageView))
@@ -23,10 +24,10 @@ class FriendsCollectionCell: UICollectionViewCell {
 //    
     }
     
-    func configure(with friends: Friends){
-        friendsLabel.text = friends.name
-        friendsImageView.image = friends.image
-        groupLabel.text = friends.secondname
+    func configureGallery(with mygallery: PhotoGallery){
+        friendsLabel.text = mygallery.description
+        friendsImageView.image = mygallery.galleryImage
+        //groupLabel.text = friends.secondname
         contentMode = .scaleAspectFill
     }
     

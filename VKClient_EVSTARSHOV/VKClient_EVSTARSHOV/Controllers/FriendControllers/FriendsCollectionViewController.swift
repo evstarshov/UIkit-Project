@@ -8,7 +8,7 @@
 import UIKit
 
 class FriendsCollectionViewController: UICollectionViewController {
-    
+    var galleryItems: [PhotoGallery] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,23 +16,32 @@ class FriendsCollectionViewController: UICollectionViewController {
 
     // ------ Получение количества ячеек из массива
     
+    func configureGal() {
+        if galleryItems.count != 0 {
+            collectionView.reloadData()
+        }
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        friendsArray.count
+        galleryItems.count
     }
 
     // ------- Конфигурация ячейки коллекции
     
+
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as?  FriendsCollectionCell
          else {return UICollectionViewCell()}
-    
-        cell.configure(with: friendsArray[indexPath.item])
+
+        cell.configureGallery(with: galleryItems[indexPath.item])
     
         return cell
     }
     
+
     
-    
+
     // ------- Выбор ячейки и переход на другой экран
     
 //    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -56,14 +65,14 @@ class FriendsCollectionViewController: UICollectionViewController {
             guard let selectedImage = segue.destination as? AvatarVievController
             else {return}
             let indexPath = sender as! IndexPath
-        let myfriend = friendsArray[indexPath.row]
-        selectedImage.configureFriend(modelfriends: myfriend)
+        let selectedIndex = galleryItems[indexPath.item]
+        selectedImage.setImage(images: galleryItems, indexAt: indexPath.row)
         }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "avatarSegue", sender: indexPath)
     }
-    
+
 }
 
     
