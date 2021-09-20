@@ -1,16 +1,16 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "filename" : "Тян-в-школьной-форме-аниме-картинки-8 2.jpg",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "filename" : "Тян-в-школьной-форме-аниме-картинки-8.jpg",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

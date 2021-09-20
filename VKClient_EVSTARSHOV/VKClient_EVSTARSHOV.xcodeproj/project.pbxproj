@@ -10,22 +10,20 @@
 		3A0E22A026D7EA8800970B82 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E229F26D7EA8800970B82 /* GroupTableViewController.swift */; };
 		3A0E22A226D9F96E00970B82 /* FriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E22A126D9F96E00970B82 /* FriendsCollectionViewController.swift */; };
 		3A0E22A426DE147B00970B82 /* FriendsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E22A326DE147B00970B82 /* FriendsCollectionCell.swift */; };
-		3A0E22AA26DE26B800970B82 /* AvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E22A926DE26B800970B82 /* AvatarVC.swift */; };
+		3A0E22AA26DE26B800970B82 /* AvatarVievController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E22A926DE26B800970B82 /* AvatarVievController.swift */; };
 		3A0E22AC26DE2E3E00970B82 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E22AB26DE2E3E00970B82 /* CollectionViewController.swift */; };
 		3A0E22AE26DE37F900970B82 /* UIColor + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E22AD26DE37F900970B82 /* UIColor + Ext.swift */; };
+		3A10AD4026F2538800FE755F /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10AD3F26F2538800FE755F /* CollectionViewLayout.swift */; };
+		3A10AD4326F25EEE00FE755F /* ShadowsAndBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10AD4226F25EEE00FE755F /* ShadowsAndBorders.swift */; };
 		3A12704726C7E38C0015E7B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12704626C7E38C0015E7B2 /* AppDelegate.swift */; };
 		3A12704926C7E38C0015E7B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12704826C7E38C0015E7B2 /* SceneDelegate.swift */; };
 		3A12704B26C7E38C0015E7B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12704A26C7E38C0015E7B2 /* LoginViewController.swift */; };
 		3A12705026C7E38C0015E7B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A12704F26C7E38C0015E7B2 /* Assets.xcassets */; };
 		3A12705326C7E38C0015E7B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A12705126C7E38C0015E7B2 /* LaunchScreen.storyboard */; };
-		3A12705D26C7FC540015E7B2 /* vk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A12705C26C7FC540015E7B2 /* vk.jpg */; };
 		3A3F00BD26D3E23A00CA9303 /* TabbarNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F00BC26D3E23A00CA9303 /* TabbarNavigationViewController.swift */; };
-		3A3F00BF26D3F72400CA9303 /* Тян-в-школьной-форме-аниме-картинки-8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F00BE26D3F72400CA9303 /* Тян-в-школьной-форме-аниме-картинки-8.jpg */; };
-		3A3F00C126D3F81500CA9303 /* 5a61fead8dbf61610ecad60d.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F00C026D3F81500CA9303 /* 5a61fead8dbf61610ecad60d.png */; };
 		3A4E8BA426D79D84003B01B5 /* friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E8BA326D79D84003B01B5 /* friends.swift */; };
 		3A4E8BA726D7A5D6003B01B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E8BA626D7A5D6003B01B5 /* Main.storyboard */; };
 		3A4E8BAA26D7A862003B01B5 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E8BA826D7A862003B01B5 /* FriendsTableViewCell.swift */; };
-		3A4E8BAB26D7A862003B01B5 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E8BA926D7A862003B01B5 /* FriendsTableViewCell.xib */; };
 		3A4E8BAD26D7DB4F003B01B5 /* groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E8BAC26D7DB4F003B01B5 /* groups.swift */; };
 		3A72C8F926E7417B006A8480 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C8F826E7417B006A8480 /* AddFriendViewController.swift */; };
 		3A72C8FC26E76DB4006A8480 /* FriendsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C8FB26E76DB4006A8480 /* FriendsTableHeader.swift */; };
@@ -38,16 +36,18 @@
 		3A72C91726E9B3AF006A8480 /* CommentNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C91626E9B3AF006A8480 /* CommentNewsTableViewController.swift */; };
 		3AC0C52626D76B0D00AB3DB5 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0C52526D76B0D00AB3DB5 /* FriendsTableViewController.swift */; };
 		3AFA188A26ED10360078E60D /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA188926ED10360078E60D /* LaunchScreenViewController.swift */; };
-		3AFA188C26ED145B0078E60D /* AnimationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA188B26ED145B0078E60D /* AnimationsModel.swift */; };
+		3AFA189426F1F57C0078E60D /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFA189326F1F57C0078E60D /* FriendsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A0E229F26D7EA8800970B82 /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		3A0E22A126D9F96E00970B82 /* FriendsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewController.swift; sourceTree = "<group>"; };
 		3A0E22A326DE147B00970B82 /* FriendsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionCell.swift; sourceTree = "<group>"; };
-		3A0E22A926DE26B800970B82 /* AvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVC.swift; sourceTree = "<group>"; };
+		3A0E22A926DE26B800970B82 /* AvatarVievController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVievController.swift; sourceTree = "<group>"; };
 		3A0E22AB26DE2E3E00970B82 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		3A0E22AD26DE37F900970B82 /* UIColor + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + Ext.swift"; sourceTree = "<group>"; };
+		3A10AD3F26F2538800FE755F /* CollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
+		3A10AD4226F25EEE00FE755F /* ShadowsAndBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsAndBorders.swift; sourceTree = "<group>"; };
 		3A12704326C7E38C0015E7B2 /* VKClient_EVSTARSHOV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKClient_EVSTARSHOV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A12704626C7E38C0015E7B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A12704826C7E38C0015E7B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,14 +55,10 @@
 		3A12704F26C7E38C0015E7B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A12705226C7E38C0015E7B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A12705426C7E38C0015E7B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A12705C26C7FC540015E7B2 /* vk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vk.jpg; sourceTree = "<group>"; };
 		3A3F00BC26D3E23A00CA9303 /* TabbarNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarNavigationViewController.swift; sourceTree = "<group>"; };
-		3A3F00BE26D3F72400CA9303 /* Тян-в-школьной-форме-аниме-картинки-8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Тян-в-школьной-форме-аниме-картинки-8.jpg"; sourceTree = "<group>"; };
-		3A3F00C026D3F81500CA9303 /* 5a61fead8dbf61610ecad60d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5a61fead8dbf61610ecad60d.png; sourceTree = "<group>"; };
 		3A4E8BA326D79D84003B01B5 /* friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friends.swift; sourceTree = "<group>"; };
 		3A4E8BA626D7A5D6003B01B5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3A4E8BA826D7A862003B01B5 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
-		3A4E8BA926D7A862003B01B5 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
 		3A4E8BAC26D7DB4F003B01B5 /* groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groups.swift; sourceTree = "<group>"; };
 		3A72C8F826E7417B006A8480 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		3A72C8FB26E76DB4006A8480 /* FriendsTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableHeader.swift; sourceTree = "<group>"; };
@@ -75,7 +71,7 @@
 		3A72C91626E9B3AF006A8480 /* CommentNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentNewsTableViewController.swift; sourceTree = "<group>"; };
 		3AC0C52526D76B0D00AB3DB5 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		3AFA188926ED10360078E60D /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
-		3AFA188B26ED145B0078E60D /* AnimationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsModel.swift; sourceTree = "<group>"; };
+		3AFA189326F1F57C0078E60D /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +85,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A10AD3E26F2538800FE755F /* CollectionLayout */ = {
+			isa = PBXGroup;
+			children = (
+				3A10AD3F26F2538800FE755F /* CollectionViewLayout.swift */,
+			);
+			path = CollectionLayout;
+			sourceTree = "<group>";
+		};
+		3A10AD4126F25AA700FE755F /* Сells */ = {
+			isa = PBXGroup;
+			children = (
+				3A0E22A326DE147B00970B82 /* FriendsCollectionCell.swift */,
+				3A4E8BA826D7A862003B01B5 /* FriendsTableViewCell.swift */,
+				3A72C90E26E90665006A8480 /* NewsTableViewCell.swift */,
+				3A72C91426E90A41006A8480 /* NewsTableViewCell.xib */,
+				3AFA189326F1F57C0078E60D /* FriendsTableViewCell.xib */,
+			);
+			path = "Сells";
+			sourceTree = "<group>";
+		};
 		3A12703A26C7E38C0015E7B2 = {
 			isa = PBXGroup;
 			children = (
@@ -114,9 +130,6 @@
 				3A12705B26C7E5510015E7B2 /* Controllers */,
 				3A12705A26C7E5340015E7B2 /* View */,
 				3A12704F26C7E38C0015E7B2 /* Assets.xcassets */,
-				3A12705C26C7FC540015E7B2 /* vk.jpg */,
-				3A3F00BE26D3F72400CA9303 /* Тян-в-школьной-форме-аниме-картинки-8.jpg */,
-				3A3F00C026D3F81500CA9303 /* 5a61fead8dbf61610ecad60d.png */,
 				3A12705126C7E38C0015E7B2 /* LaunchScreen.storyboard */,
 				3A12705426C7E38C0015E7B2 /* Info.plist */,
 			);
@@ -126,15 +139,12 @@
 		3A12705A26C7E5340015E7B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A10AD4126F25AA700FE755F /* Сells */,
+				3A10AD3E26F2538800FE755F /* CollectionLayout */,
 				3A72C8FD26E78243006A8480 /* TableSectionHeaderFooter */,
 				3A72C8FA26E76C33006A8480 /* TableHeaders */,
 				3A4E8BA626D7A5D6003B01B5 /* Main.storyboard */,
 				3A0E22AB26DE2E3E00970B82 /* CollectionViewController.swift */,
-				3A0E22A326DE147B00970B82 /* FriendsCollectionCell.swift */,
-				3A4E8BA826D7A862003B01B5 /* FriendsTableViewCell.swift */,
-				3A4E8BA926D7A862003B01B5 /* FriendsTableViewCell.xib */,
-				3A72C90E26E90665006A8480 /* NewsTableViewCell.swift */,
-				3A72C91426E90A41006A8480 /* NewsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,18 +152,10 @@
 		3A12705B26C7E5510015E7B2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3AFA188926ED10360078E60D /* LaunchScreenViewController.swift */,
-				3A12704A26C7E38C0015E7B2 /* LoginViewController.swift */,
-				3A3F00BC26D3E23A00CA9303 /* TabbarNavigationViewController.swift */,
-				3AC0C52526D76B0D00AB3DB5 /* FriendsTableViewController.swift */,
-				3A0E229F26D7EA8800970B82 /* GroupTableViewController.swift */,
-				3A0E22A126D9F96E00970B82 /* FriendsCollectionViewController.swift */,
-				3A0E22A926DE26B800970B82 /* AvatarVC.swift */,
-				3A0E22AD26DE37F900970B82 /* UIColor + Ext.swift */,
-				3A72C8F826E7417B006A8480 /* AddFriendViewController.swift */,
-				3A72C90026E7BE2C006A8480 /* AllGroupsTableViewController.swift */,
-				3A72C90826E8AC00006A8480 /* NewsTableViewController.swift */,
-				3A72C91626E9B3AF006A8480 /* CommentNewsTableViewController.swift */,
+				3AFA188E26F1DEF80078E60D /* GroupsControllers */,
+				3AFA189026F1DF890078E60D /* News&Comments */,
+				3AFA188F26F1DF4B0078E60D /* LoginControllers */,
+				3AFA188D26F1DE2C0078E60D /* FriendControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -164,7 +166,7 @@
 				3A4E8BA326D79D84003B01B5 /* friends.swift */,
 				3A4E8BAC26D7DB4F003B01B5 /* groups.swift */,
 				3A72C90A26E8B9D2006A8480 /* NewsModel.swift */,
-				3AFA188B26ED145B0078E60D /* AnimationsModel.swift */,
+				3A10AD4226F25EEE00FE755F /* ShadowsAndBorders.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +185,46 @@
 				3A72C8FE26E782A3006A8480 /* AllFriendsSectionHeader.swift */,
 			);
 			path = TableSectionHeaderFooter;
+			sourceTree = "<group>";
+		};
+		3AFA188D26F1DE2C0078E60D /* FriendControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AC0C52526D76B0D00AB3DB5 /* FriendsTableViewController.swift */,
+				3A0E22A126D9F96E00970B82 /* FriendsCollectionViewController.swift */,
+				3A0E22A926DE26B800970B82 /* AvatarVievController.swift */,
+				3A72C8F826E7417B006A8480 /* AddFriendViewController.swift */,
+			);
+			path = FriendControllers;
+			sourceTree = "<group>";
+		};
+		3AFA188E26F1DEF80078E60D /* GroupsControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A0E229F26D7EA8800970B82 /* GroupTableViewController.swift */,
+				3A72C90026E7BE2C006A8480 /* AllGroupsTableViewController.swift */,
+			);
+			path = GroupsControllers;
+			sourceTree = "<group>";
+		};
+		3AFA188F26F1DF4B0078E60D /* LoginControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AFA188926ED10360078E60D /* LaunchScreenViewController.swift */,
+				3A12704A26C7E38C0015E7B2 /* LoginViewController.swift */,
+				3A3F00BC26D3E23A00CA9303 /* TabbarNavigationViewController.swift */,
+				3A0E22AD26DE37F900970B82 /* UIColor + Ext.swift */,
+			);
+			path = LoginControllers;
+			sourceTree = "<group>";
+		};
+		3AFA189026F1DF890078E60D /* News&Comments */ = {
+			isa = PBXGroup;
+			children = (
+				3A72C90826E8AC00006A8480 /* NewsTableViewController.swift */,
+				3A72C91626E9B3AF006A8480 /* CommentNewsTableViewController.swift */,
+			);
+			path = "News&Comments";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,12 +286,9 @@
 			files = (
 				3A72C91526E90A41006A8480 /* NewsTableViewCell.xib in Resources */,
 				3A12705326C7E38C0015E7B2 /* LaunchScreen.storyboard in Resources */,
-				3A3F00BF26D3F72400CA9303 /* Тян-в-школьной-форме-аниме-картинки-8.jpg in Resources */,
 				3A12705026C7E38C0015E7B2 /* Assets.xcassets in Resources */,
 				3A4E8BA726D7A5D6003B01B5 /* Main.storyboard in Resources */,
-				3A12705D26C7FC540015E7B2 /* vk.jpg in Resources */,
-				3A3F00C126D3F81500CA9303 /* 5a61fead8dbf61610ecad60d.png in Resources */,
-				3A4E8BAB26D7A862003B01B5 /* FriendsTableViewCell.xib in Resources */,
+				3AFA189426F1F57C0078E60D /* FriendsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +301,7 @@
 			files = (
 				3A72C90B26E8B9D2006A8480 /* NewsModel.swift in Sources */,
 				3AFA188A26ED10360078E60D /* LaunchScreenViewController.swift in Sources */,
+				3A10AD4326F25EEE00FE755F /* ShadowsAndBorders.swift in Sources */,
 				3A0E22AC26DE2E3E00970B82 /* CollectionViewController.swift in Sources */,
 				3A3F00BD26D3E23A00CA9303 /* TabbarNavigationViewController.swift in Sources */,
 				3A72C8FF26E782A3006A8480 /* AllFriendsSectionHeader.swift in Sources */,
@@ -271,16 +311,16 @@
 				3A72C90126E7BE2C006A8480 /* AllGroupsTableViewController.swift in Sources */,
 				3A4E8BAA26D7A862003B01B5 /* FriendsTableViewCell.swift in Sources */,
 				3A72C91026E90665006A8480 /* NewsTableViewCell.swift in Sources */,
-				3A0E22AA26DE26B800970B82 /* AvatarVC.swift in Sources */,
+				3A0E22AA26DE26B800970B82 /* AvatarVievController.swift in Sources */,
 				3A72C90926E8AC00006A8480 /* NewsTableViewController.swift in Sources */,
 				3A0E22A426DE147B00970B82 /* FriendsCollectionCell.swift in Sources */,
 				3AC0C52626D76B0D00AB3DB5 /* FriendsTableViewController.swift in Sources */,
 				3A12704926C7E38C0015E7B2 /* SceneDelegate.swift in Sources */,
 				3A0E22AE26DE37F900970B82 /* UIColor + Ext.swift in Sources */,
 				3A0E22A226D9F96E00970B82 /* FriendsCollectionViewController.swift in Sources */,
+				3A10AD4026F2538800FE755F /* CollectionViewLayout.swift in Sources */,
 				3A4E8BA426D79D84003B01B5 /* friends.swift in Sources */,
 				3A72C8F926E7417B006A8480 /* AddFriendViewController.swift in Sources */,
-				3AFA188C26ED145B0078E60D /* AnimationsModel.swift in Sources */,
 				3A4E8BAD26D7DB4F003B01B5 /* groups.swift in Sources */,
 				3A0E22A026D7EA8800970B82 /* GroupTableViewController.swift in Sources */,
 				3A72C8FC26E76DB4006A8480 /* FriendsTableHeader.swift in Sources */,
