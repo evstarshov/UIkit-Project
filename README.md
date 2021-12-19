@@ -1,3 +1,3 @@
-# VKCli_EVStarshov
+# Pet UIkit Project
 
-Simple and lightweight client for vk.com socila network
+A project in which I use different technologies to build a user interface in iOS
